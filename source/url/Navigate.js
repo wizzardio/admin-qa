@@ -1,14 +1,17 @@
 'use strict';
 
+const logger = require('../utils/logger');
 const URL = require('./URL');
 
 class Navigate {
     static async goToDummy() {
-        console.log(`Navigate to "${URL.DUMMY}"`);
         try {
+            logger.info(`Navigate to dummy page via URL ${URL.DUMMY}`);
             await global.page.goto(URL.DUMMY);
         } catch (e) {
-            throw new Error(`Error while navigated to dummy page: ${e.message}`);
+            const msg = `Error while navigated to dummy page: ${e.message}`;
+            logger.error(msg);
+            throw new Error(msg);
         }
     }
 }

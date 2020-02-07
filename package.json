@@ -13,6 +13,7 @@
     "mocha": "^6.2.2"
   },
   "dependencies": {
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^2.0.0",
+    "winston": "^3.2.1"
   }
 }
